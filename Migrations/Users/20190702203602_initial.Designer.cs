@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using byappt_identity.Data;
 
-namespace byappt_identity.Migrations
+namespace byappt_identity.Migrations.Users
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190618210623_InitialUserStore")]
-    partial class InitialUserStore
+    [DbContext(typeof(UserStoreDbContext))]
+    [Migration("20190702203602_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

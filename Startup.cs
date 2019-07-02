@@ -34,11 +34,11 @@ namespace byappt_identity
 
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<UserStoreDbContext>(options =>
                 options.UseNpgsql(userstoreConnection));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<UserStoreDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);

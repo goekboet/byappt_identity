@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace byappt_identity.Migrations.PersistedGrantDb
+namespace byappt_identity.Migrations.Grants
 {
-    public partial class InitialGrant : Migration
+    public partial class initialGrants : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

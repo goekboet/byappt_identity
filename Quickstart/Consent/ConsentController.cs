@@ -55,7 +55,7 @@ namespace IdentityServer4.Quickstart.UI
             {
                 return View("Index", vm);
             }
-
+            
             return View("Error");
         }
 

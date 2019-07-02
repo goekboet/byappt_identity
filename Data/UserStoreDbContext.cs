@@ -4,9 +4,9 @@ using byappt_identity.Models;
 
 namespace byappt_identity.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class UserStoreDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public UserStoreDbContext(DbContextOptions<UserStoreDbContext> options)
             : base(options)
         {
         }

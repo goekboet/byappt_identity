@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace byappt_identity.Migrations.PersistedGrantDb
+namespace byappt_identity.Migrations.Grants
 {
     [DbContext(typeof(PersistedGrantDbContext))]
-    [Migration("20190618210916_InitialGrant")]
-    partial class InitialGrant
+    [Migration("20190702203253_initialGrants")]
+    partial class initialGrants
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -19,18 +19,18 @@ namespace byappt_identity
         public static void EnsureSeedData(string connectionString)
         {
             var services = new ServiceCollection();
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<UserStoreDbContext>(options =>
                options.UseNpgsql(connectionString));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<UserStoreDbContext>()
                 .AddDefaultTokenProviders();
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
                 using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+                    var context = scope.ServiceProvider.GetService<UserStoreDbContext>();
                     context.Database.Migrate();
 
                     var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();

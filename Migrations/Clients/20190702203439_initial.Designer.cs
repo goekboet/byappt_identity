@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace byappt_identity.Migrations.ConfigurationDb
+namespace byappt_identity.Migrations.Clients
 {
     [DbContext(typeof(ConfigurationDbContext))]
-    [Migration("20190618210813_InitialConfig")]
-    partial class InitialConfig
+    [Migration("20190702203439_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
