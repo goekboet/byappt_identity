@@ -1,2 +1,4 @@
 bin
 obj
+identityserver4_log.txt
+tempkey.rsa

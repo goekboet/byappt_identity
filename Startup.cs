@@ -10,8 +10,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace byappt_identity
 {
@@ -67,14 +69,11 @@ namespace byappt_identity
                 })
                 .AddAspNetIdentity<ApplicationUser>();
 
-            if (Environment.IsDevelopment())
-            {
-                builder.AddDeveloperSigningCredential();
-            }
-            else
-            {
-                throw new Exception("need to configure key material");
-            }
+            var path = "keymaterial.pfx";
+            var pass = "test";
+            var cert = new X509Certificate2(path, pass);
+
+            builder.AddSigningCredential(cert);
         }
 
         public void Configure(IApplicationBuilder app)
